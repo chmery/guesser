@@ -1,0 +1,52 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EFEAD8;
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --light-green: #6D8B74;
+  --dark-green: #5F7161;
+  --border-color: #D3D3D3;
+  --dark-grey: #282828;
+  --box-shadow: 0px 0px 20px -2px #DFDFDF;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--light-green);
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-weight: 900;
+  letter-spacing: 0.225em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2,
+h3 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}/*# sourceMappingURL=style.css.map */

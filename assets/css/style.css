@@ -86,6 +86,9 @@ p {
   border-radius: 2.375em;
   text-align: center;
 }
+.container--inactive {
+  display: none;
+}
 .container--no-shadow {
   box-shadow: none;
 }

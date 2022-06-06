@@ -38,17 +38,19 @@ const startTimer = () => {
 
 let Interval = setInterval(startTimer, 10);
 
-resetBtn.addEventListener('click', () => {
-    clearInterval(Interval);
+const resetTimer = () => {
     minutes = 0;
     seconds = 0;
     tens = 0;
     minutesOutput.innerHTML = "00";
     secondsOutput.innerHTML = "00";
     tensOutput.innerHTML = "00";
+    clearInterval(Interval);
     Interval = setInterval(startTimer, 10);
-    
-})
+}
+
+resetBtn.addEventListener('click', resetTimer);
+
 
 
 

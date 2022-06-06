@@ -23,14 +23,14 @@
             <button class="container__btn">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
-    <div class="container">
+    <div class="container" id="start-container">
         <h1 class="container__name">GUESSER</h1>
         <p class="container__text">Try to guess the password using the hints.</p>
         <p class="container__text container__text--btn-space">I recommend reading detailed <span class="container__text-highlight container__text-highlight--link" id="show-info">info</span> before you start.</p>
-        <a class="container__btn" href="#">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></a>
+        <a class="container__btn" id="start-guessing" href="#">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></a>
     </div>
 
-    <div class="container">
+    <div class="container container--inactive" id="guesser-container">
         <div class="container__header">
             <img class="container__header-img" id="show-info" src="assets/images/info.svg">
             <h1 class="container__name container__name--margin-bottom-0">GUESSER</h1>
@@ -43,6 +43,7 @@
     </div>
     <script src="assets/js/info.js"></script>
     <script src="assets/js/timer.js"></script>
+    <script src="assets/js/start.js"></script>
 </main>
 </body>
 </html>

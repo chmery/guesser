@@ -12,6 +12,10 @@
     border-radius: 2.375em;
     text-align: center;
 
+    &--inactive {
+        display: none;
+    }
+
     &--no-shadow {
         box-shadow: none;
     }

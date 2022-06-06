@@ -1,12 +1,14 @@
-const infoText = document.querySelector('#show-info');
-const closeBtn = document.querySelector('.container__btn');
+const openInfo = document.querySelectorAll('#show-info');
+const closeInfo = document.querySelector('.container__btn');
 const info = document.querySelector('.info');
 
-infoText.addEventListener('click', () => {
-    info.showModal();
+openInfo.forEach(item => {
+    item.addEventListener('click', () => {
+        info.showModal();
+    })
 })
-
-closeBtn.addEventListener('click', () => {
+ 
+closeInfo.addEventListener('click', () => {
     info.close();
 })
 

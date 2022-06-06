@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 3em;
+    border-radius: 2.375em;
+    text-align: center;
+    
+    &__btn-icon {
+        height: 1.625rem;
+        margin-left: 0.2em;
+    }
+
+    &__text-highlight {
+        color: var(--light-green);
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    &__text--btn-space {
+        margin-bottom: 5.5em;
+    }
+}

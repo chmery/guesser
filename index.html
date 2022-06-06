@@ -12,12 +12,24 @@
 </head>
 <body>
 <main>
+    <dialog class="info">
+        <div class="container container--no-shadow">
+            <h1 class="container__name">INFO</h1>
+            <p class="container__text"><span class="container__text-highlight">1. </span>If you take 5 hints and fail to guess, the game is over.</p>
+            <p class="container__text"><span class="container__text-highlight">2. </span>There are 3 types of passwords: easy, medium and hard. Each hint adds 6, 4 and 2 attempts depending on the password type respectively.</p>
+            <p class="container__text"><span class="container__text-highlight">3. </span>You have an unlimited time and number of attempts.</p>
+            <p class="container__text"><span class="container__text-highlight">4. </span>Capital letters are not required.</p>
+            <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess as fast as possible with as few tries as possible.</p>
+            <button class="container__btn">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+        </div>
+    </dialog>
     <div class="container">
         <h1 class="container__name">GUESSER</h1>
         <p class="container__text">Try to guess the password using the hints.</p>
-        <p class="container__text container__text--btn-space">I recommend reading detailed <span class="container__text-highlight">info</span> before you start.</p>
-        <a class="container__start btn" href="#">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></a>
+        <p class="container__text container__text--btn-space">I recommend reading detailed <span class="container__text-highlight container__text-highlight--link" id="show-info">info</span> before you start.</p>
+        <a class="container__btn" href="#">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></a>
     </div>
+    <script src="assets/js/info.js"></script>
 </main>
 </body>
 </html>

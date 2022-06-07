@@ -23,6 +23,7 @@
             <button class="container__btn">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
+
     <div class="container" id="start-container">
         <h1 class="container__name">GUESSER</h1>
         <p class="container__text">Try to guess the password using the hints.</p>
@@ -37,9 +38,27 @@
             <img class="container__header-img" id="reset" src="assets/images/restart.svg">
         </div>
         <div class="container__body">
-            <span id="minutes">00</span><span>:</span><span id="seconds">00</span><span>:</span><span id="tens">00</span>
+            <h3 class="container__body-hint">Hint 1</h3>
+            <p class="container__text-hint">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."</p>
+            <div class="container__stats">
+                <div class="container__time">
+                    <p class="container__text-highlight container__text-highlight--no-margin">Time:</p>
+                    <span class="container__minutes" id="minutes">00</span><span class="container__minutes">:</span><span class="container__seconds" id="seconds">00</span><span class="container__tens">:</span><span class="container__tens" id="tens">00</span>
+                </div>
+                <div class="container__type">
+                    <span class="container__type container__type--easy">Easy</span>
+                </div>
+                <div class="container__attempts">
+                    <p class="container__text-highlight container__text-highlight--no-margin">Attempts:</p>
+                    <span id="attempts">1</span>
+                </div>
+            </div>
+            <input class="container__input container__input--btn-space" type="text">
+            <div class="container__buttons">
+                <button class="container__btn container__btn--down">Get a hint<img class="container__btn-icon container__btn-icon--no-margin" src="assets/images/hint.svg"></button>
+                <button class="container__btn container__btn--right container__btn--down">Guess<img class="container__btn-icon" src="assets/images/check.svg"></button>
+            </div>
         </div>
-
     </div>
     <script src="assets/js/info.js"></script>
     <script src="assets/js/timer.js"></script>

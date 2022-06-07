@@ -34,6 +34,10 @@ const startTimer = () => {
         minutesOutput.innerHTML = "0" + minutes;
         secondsOutput.innerHTML = "0" + seconds;
     }
+
+    if(minutes > 9) {
+        minutesOutput.innerHTML = minutes;
+    }
 }
 
 let Interval = setInterval(startTimer, 10);

@@ -77,8 +77,8 @@ p {
   border: 1px solid var(--border-color);
   box-shadow: var(--box-shadow);
   background-color: #fff;
-  width: 450px;
-  min-width: 450px;
+  width: 470px;
+  min-width: 470px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,14 +109,17 @@ p {
   height: 1.9rem;
   cursor: pointer;
 }
+.container__body {
+  width: 100%;
+}
 .container__stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1.5em 0em;
 }
-.container__time {
-  white-space: nowrap;
+.container__stopwatch {
+  display: flex;
 }
 .container__minutes, .container__seconds, .container__tens, .container__attempts {
   font-weight: 700;
@@ -127,6 +130,7 @@ p {
 }
 .container__tens {
   font-size: 1.125rem;
+  margin-top: 0.4em;
 }
 .container__type {
   font-weight: 800;
@@ -138,12 +142,19 @@ p {
 .container__type--easy {
   background-color: #E8E2CD;
 }
+.container__type--medium {
+  background-color: #D0C9C0;
+}
+.container__type--hard {
+  background-color: #B5A694;
+}
 .container__input {
-  width: 95%;
+  width: 100%;
   border: 1px solid var(--border-color);
-  height: 4em;
+  height: 4.5em;
   border-radius: 10em;
   padding: 0em 1em;
+  box-sizing: border-box;
 }
 .container__input:focus {
   outline: none;

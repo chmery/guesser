@@ -12,26 +12,74 @@ const passwords = [
     },
 
     {
-        keyword: "bike",
-        type: "medium",
+        keyword: "dog",
+        type: "easy",
         hints: [
-            "It moves faster than on foot",
-            "You can use and move it using your muscles",
-            "You couldn't balance on it as a child",
-            "It does not have an engine",
-            "It has two wheels"
+            "It likes when you throw something.",
+            "It is a popular animal.",
+            "You go out for a walk with it.",
+            "The opposite of a cat.",
+            "Man's best friend."
         ]
     },
 
     {
-        keyword: "shoes",
+        keyword: "chicken",
+        type: "easy",
+        hints: [
+            "It is closely related to food.",
+            "It hatches from an egg.",
+            "It is an animal.",
+            "It has 2 legs only.",
+            "It is a bird but not flying.",
+        ]
+    },
+
+    {
+        keyword: "bike",
+        type: "medium",
+        hints: [
+            "It moves little faster than on foot.",
+            "You can use and move it using your muscles.",
+            "You couldn't balance on it as a child.",
+            "It does not have an engine.",
+            "It has two wheels."
+        ]
+    },
+
+    {
+        keyword: "balloon",
+        type: "medium",
+        hints: [
+            "Children like it a lot.",
+            "It's light.",
+            "You can't eat it.",
+            "It's made of rubber.",
+            "It is round and floats in the air."
+        ]
+    },
+
+    {
+        keyword: "chair",
+        type: "medium",
+        hints: [
+            "Everyone has it at home.",
+            "You can pick it up without a problem in most cases.",
+            "You can't eat it!",
+            "It is made of wood.",
+            "You sit on it."
+        ]
+    },
+
+    {
+        keyword: "frog",
         type: "hard",
         hints: [
-            "Everyone has it and you see it every day",
-            "It's a little bigger than a human hand",
-            "You should wear it outside but you don't have to.",
-            "If you don't wear it, you're going to get a little hurt",
-            "A runner's must-have item"
+            "It is small.",
+            "It is an animal.",
+            "It likes water and is noisy at night.",
+            "It is green.",
+            "It is small green animal that lives near a pond. Combine these facts."
         ]
     }
 ]

@@ -6,6 +6,13 @@ const typeOutput = document.querySelector('#type');
 const attemptOutput = document.querySelector('#attempts');
 const input = document.querySelector('.container__input');
 const guessBtn = document.querySelector('#guess');
+const hintContainer = document.querySelector('.container__hint');
+
+// Win output variables
+const winType = document.querySelector('#modal-win-type');
+const winTries = document.querySelector('#modal-win-tries');
+const winTime = document.querySelector('#modal-win-time');
+
 
 let randomItem = Math.floor(Math.random()*passwords.length);
 
@@ -51,6 +58,7 @@ const getHint = () => {
         hintCount++
         hintOutput.innerHTML = passwords[randomItem].hints[hintArray];
         hintNumber.innerHTML = "Hint " + hintCount;
+        hintContainer.animate(hintContainerFrames, hintContainerDuration)
         if (passwords[randomItem].type == "easy"){
             attemptCount += 6
             attemptOutput.innerHTML = attemptCount
@@ -71,12 +79,21 @@ const getHint = () => {
 
 const guess = () => {
     if(input.value == passwords[randomItem].keyword){
+        attemptCount++
+        winType.innerHTML = passwords[randomItem].type
+        winTries.innerHTML = attemptCount + " tries"
+        if(minutes == 0) {
+            winTime.innerHTML = seconds + " seconds."
+        } else {
+            winTime.innerHTML = minutes + " minute/s and " + seconds + " seconds."
+        }
         showWinModal()
     }
 
     if (input.value != passwords[randomItem].keyword){
         attemptCount++
         attemptOutput.innerHTML = attemptCount;
+        guesserContainer.animate(guesserContainerFrames, guesserContainerDuration);
     }
 
     if (input.value != passwords[randomItem].keyword && hintArray == 4){
@@ -87,3 +104,4 @@ const guess = () => {
 hintBtn.addEventListener('click', getHint)
 resetBtn.addEventListener('click', reset)
 guessBtn.addEventListener('click', guess)
+

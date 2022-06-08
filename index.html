@@ -35,7 +35,7 @@
     <dialog class="modal" id="modal-win">
         <div class="container container--no-shadow">
             <h1 class="container__name">YOU DID IT!</h1>
-            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight">medium</span> password in <span class="container__text-highlight">2 tries</span> and it took you <span class="container__text-highlight">30 seconds.</span></p>
+            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight" id="modal-win-type">medium</span> password in <span class="container__text-highlight" id="modal-win-tries">2 tries</span> and it took you <span class="container__text-highlight" id="modal-win-time">30 seconds.</span></p>
             <button class="container__btn" id="close-modal-win">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
@@ -92,11 +92,12 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/info.js"></script>
+    <script src="assets/js/modal.js"></script>
     <script src="assets/js/timer.js"></script>
     <script src="assets/js/start.js"></script>
     <script src="assets/js/passwords.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/animation.js"></script>
 </main>
 </body>
 </html>

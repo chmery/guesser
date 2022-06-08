@@ -12,7 +12,7 @@
 </head>
 <body>
 <main>
-    <dialog class="info">
+    <dialog class="modal" id="modal-info">
         <div class="container container--no-shadow">
             <h1 class="container__name">INFO</h1>
             <p class="container__text"><span class="container__text-highlight">1. </span>If you take 5 hints and fail to guess, the game is over.</p>
@@ -20,7 +20,31 @@
             <p class="container__text"><span class="container__text-highlight">3. </span>You have an unlimited time and number of attempts.</p>
             <p class="container__text"><span class="container__text-highlight">4. </span>Capital letters are not required.</p>
             <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess as fast as possible with as few tries as possible.</p>
-            <button class="container__btn">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+            <button class="container__btn" id="close-modal-info">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+        </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-hints-limit">
+        <div class="container container--no-shadow">
+            <h1 class="container__name">HINTS LIMIT!</h1>
+            <p class="container__text container__text--btn-space">Now you have to guess the password.</p>
+            <button class="container__btn" id="close-modal-hints-limit">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+        </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-win">
+        <div class="container container--no-shadow">
+            <h1 class="container__name">YOU DID IT!</h1>
+            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight">medium</span> password in <span class="container__text-highlight">2 tries</span> and it took you <span class="container__text-highlight">30 seconds.</span></p>
+            <button class="container__btn" id="close-modal-win">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+        </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-lose">
+        <div class="container container--no-shadow">
+            <h1 class="container__name">NOT THIS TIME...</h1>
+            <p class="container__text container__text--btn-space">Unfortunately, you have exceeded the <span class="container__text-highlight">hints limit</span> and you didin't guess the password.</p>
+            <button class="container__btn" id="close-modal-lose">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
 

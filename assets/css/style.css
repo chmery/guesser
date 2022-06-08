@@ -244,17 +244,17 @@ p {
   margin-bottom: 5.5em;
 }
 
-.info::-webkit-backdrop {
+.modal::-webkit-backdrop {
   background-color: #000;
   opacity: 0.3;
 }
 
-.info::backdrop {
+.modal::backdrop {
   background-color: #000;
   opacity: 0.3;
 }
 
-.info {
+.modal {
   border: 0;
   background-color: transparent;
   max-width: 32em;

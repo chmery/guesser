@@ -112,6 +112,30 @@ p {
 .container__body {
   width: 100%;
 }
+.container__hint {
+  -webkit-animation: hints-zoom-in 0.2s;
+          animation: hints-zoom-in 0.2s;
+}
+@-webkit-keyframes hints-zoom-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes hints-zoom-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .container__stats {
   display: flex;
   justify-content: space-between;
@@ -133,9 +157,10 @@ p {
   margin-top: 0.4em;
 }
 .container__type {
+  box-sizing: border-box;
   font-weight: 800;
   font-size: 1.125rem;
-  padding: 0.4em 1.2em;
+  padding: 0.2em 0.6em;
   color: #fff;
   border-radius: 10em;
 }

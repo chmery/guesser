@@ -14,21 +14,21 @@ const winTries = document.querySelector('#modal-win-tries');
 const winTime = document.querySelector('#modal-win-time');
 
 
-let randomItem = Math.floor(Math.random()*passwords.length);
+let randomItem = Math.floor(Math.random()*words.length);
 
 let attemptCount = 0;
 let hintArray = 0;
 let hintCount = hintArray + 1;
 
-hintOutput.innerHTML = passwords[randomItem].hints[hintArray];
+hintOutput.innerHTML = words[randomItem].hints[hintArray];
 hintNumber.innerHTML = "Hint " + hintCount;
 attemptOutput.innerHTML = attemptCount;
 
 const typeChecker = (randomItem) => {
-    if (passwords[randomItem].type == "easy"){
+    if (words[randomItem].type == "easy"){
         typeContainer.setAttribute('class', 'container__type container__type--easy')
         typeOutput.innerHTML = "Easy";
-    } else if (passwords[randomItem].type == "medium"){
+    } else if (words[randomItem].type == "medium"){
         typeContainer.setAttribute('class', 'container__type container__type--medium')
         typeOutput.innerHTML = "Medium";
     } else {
@@ -40,29 +40,31 @@ const typeChecker = (randomItem) => {
 typeChecker(randomItem);
 
 const reset = () => {
-    randomItem = Math.floor(Math.random()*passwords.length);
+    randomItem = Math.floor(Math.random()*words.length);
     typeChecker(randomItem)
     resetTimer()
     input.value = "";
     attemptCount = 0;
     hintArray = 0;
     hintCount = 1;
-    hintOutput.innerHTML = passwords[randomItem].hints[hintArray];
+    hintContainer.animate(hintContainerFrames, hintContainerDuration)
+    hintOutput.innerHTML = words[randomItem].hints[hintArray];
     hintNumber.innerHTML = "Hint " + hintCount;
     attemptOutput.innerHTML = attemptCount;
 }
 
 const getHint = () => {
+    hintBtn.blur()
     if(hintArray < 4) {
         hintArray++
         hintCount++
-        hintOutput.innerHTML = passwords[randomItem].hints[hintArray];
+        hintOutput.innerHTML = words[randomItem].hints[hintArray];
         hintNumber.innerHTML = "Hint " + hintCount;
         hintContainer.animate(hintContainerFrames, hintContainerDuration)
-        if (passwords[randomItem].type == "easy"){
+        if (words[randomItem].type == "easy"){
             attemptCount += 6
             attemptOutput.innerHTML = attemptCount
-        } else if (passwords[randomItem].type == "medium"){
+        } else if (words[randomItem].type == "medium"){
             attemptCount += 4
             attemptOutput.innerHTML = attemptCount
         } else {
@@ -78,9 +80,10 @@ const getHint = () => {
 }
 
 const guess = () => {
-    if(input.value == passwords[randomItem].keyword){
+    guessBtn.blur()
+    if(input.value.toLowerCase() == words[randomItem].keyword){
         attemptCount++
-        winType.innerHTML = passwords[randomItem].type
+        winType.innerHTML = words[randomItem].type
         winTries.innerHTML = attemptCount + " tries"
         if(minutes == 0) {
             winTime.innerHTML = seconds + " seconds."
@@ -90,13 +93,13 @@ const guess = () => {
         showWinModal()
     }
 
-    if (input.value != passwords[randomItem].keyword){
+    if (input.value.toLowerCase() != words[randomItem].keyword){
         attemptCount++
         attemptOutput.innerHTML = attemptCount;
         guesserContainer.animate(guesserContainerFrames, guesserContainerDuration);
     }
 
-    if (input.value != passwords[randomItem].keyword && hintArray == 4){
+    if (input.value.toLowerCase() != words[randomItem].keyword && hintArray == 4){
         showLoseModal()
     }
 }
@@ -104,4 +107,9 @@ const guess = () => {
 hintBtn.addEventListener('click', getHint)
 resetBtn.addEventListener('click', reset)
 guessBtn.addEventListener('click', guess)
+window.addEventListener('keyup', function(e){
+    if (e.key === 'Enter'){
+        guess()
+    }
+})
 

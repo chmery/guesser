@@ -16,7 +16,7 @@
         <div class="container container--no-shadow">
             <h1 class="container__name">INFO</h1>
             <p class="container__text"><span class="container__text-highlight">1. </span>If you take 5 hints and fail to guess, the game is over.</p>
-            <p class="container__text"><span class="container__text-highlight">2. </span>There are 3 types of passwords: easy, medium and hard. Each hint adds 6, 4 and 2 attempts depending on the password type respectively.</p>
+            <p class="container__text"><span class="container__text-highlight">2. </span>There are 3 types of words: easy, medium and hard. Each hint adds 6, 4 and 2 attempts depending on the word type respectively.</p>
             <p class="container__text"><span class="container__text-highlight">3. </span>You have an unlimited time and number of attempts.</p>
             <p class="container__text"><span class="container__text-highlight">4. </span>Capital letters are not required.</p>
             <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess as fast as possible with as few tries as possible.</p>
@@ -27,7 +27,7 @@
     <dialog class="modal" id="modal-hints-limit">
         <div class="container container--no-shadow">
             <h1 class="container__name">HINTS LIMIT!</h1>
-            <p class="container__text container__text--btn-space">Now you have to guess the password.</p>
+            <p class="container__text container__text--btn-space">Now you have to guess the word.</p>
             <button class="container__btn" id="close-modal-hints-limit">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
@@ -35,7 +35,7 @@
     <dialog class="modal" id="modal-win">
         <div class="container container--no-shadow">
             <h1 class="container__name">YOU DID IT!</h1>
-            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight" id="modal-win-type">medium</span> password in <span class="container__text-highlight" id="modal-win-tries">2 tries</span> and it took you <span class="container__text-highlight" id="modal-win-time">30 seconds.</span></p>
+            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight" id="modal-win-type">medium</span> word in <span class="container__text-highlight" id="modal-win-tries">2 tries</span> and it took you <span class="container__text-highlight" id="modal-win-time">30 seconds.</span></p>
             <button class="container__btn" id="close-modal-win">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
@@ -43,14 +43,14 @@
     <dialog class="modal" id="modal-lose">
         <div class="container container--no-shadow">
             <h1 class="container__name">NOT THIS TIME...</h1>
-            <p class="container__text container__text--btn-space">Unfortunately, you have exceeded the <span class="container__text-highlight">hints limit</span> and you didin't guess the password.</p>
+            <p class="container__text container__text--btn-space">Unfortunately, you have exceeded the <span class="container__text-highlight">hints limit</span> and you didin't guess the word.</p>
             <button class="container__btn" id="close-modal-lose">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
 
     <div class="container" id="start-container">
         <h1 class="container__name">GUESSER</h1>
-        <p class="container__text">Try to guess the password using the hints.</p>
+        <p class="container__text">Try to guess the word using the hints.</p>
         <p class="container__text container__text--btn-space">I recommend reading detailed <span class="container__text-highlight container__text-highlight--link" id="show-info">info</span> before you start.</p>
         <button class="container__btn" id="start-guessing">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></button>
     </div>
@@ -64,7 +64,7 @@
         <div class="container__body">
             <div class="container__hint">
                 <h3 class="container__hint-number">Hint 1</h3>
-                <p class="container__text-hint">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."</p>
+                <p class="container__text-hint"></p>
             </div>
             <div class="container__stats">
                 <div class="container__time">
@@ -95,7 +95,7 @@
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/timer.js"></script>
     <script src="assets/js/start.js"></script>
-    <script src="assets/js/passwords.js"></script>
+    <script src="assets/js/words.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animation.js"></script>
 </main>

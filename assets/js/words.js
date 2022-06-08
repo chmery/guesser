@@ -1,4 +1,4 @@
-const passwords = [
+const words = [
     {
         keyword: "apple",
         type: "easy",

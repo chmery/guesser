@@ -2,6 +2,7 @@ const words = [
     {
         keyword: "apple",
         difficulty: "easy",
+        guessed: false,
         hints: [
             "It is small and red.",
             "It grows on trees.",
@@ -14,6 +15,7 @@ const words = [
     {
         keyword: "dog",
         difficulty: "easy",
+        guessed: false,
         hints: [
             "It likes when you throw something.",
             "It is a popular animal.",
@@ -26,6 +28,7 @@ const words = [
     {
         keyword: "chicken",
         difficulty: "easy",
+        guessed: false,
         hints: [
             "It is closely related to food.",
             "It hatches from an egg.",
@@ -38,6 +41,7 @@ const words = [
     {
         keyword: "bike",
         difficulty: "medium",
+        guessed: false,
         hints: [
             "It moves little faster than on foot.",
             "You can use and move it using your muscles.",
@@ -50,6 +54,7 @@ const words = [
     {
         keyword: "balloon",
         difficulty: "medium",
+        guessed: false,
         hints: [
             "Children like it a lot.",
             "It's light.",
@@ -62,6 +67,7 @@ const words = [
     {
         keyword: "chair",
         difficulty: "medium",
+        guessed: false,
         hints: [
             "Everyone has it at home.",
             "You can pick it up without a problem in most cases.",
@@ -74,6 +80,7 @@ const words = [
     {
         keyword: "frog",
         difficulty: "hard",
+        guessed: false,
         hints: [
             "It is small.",
             "It is an animal.",
@@ -81,5 +88,18 @@ const words = [
             "It is green.",
             "It is small green animal that lives near a pond. Combine these facts."
         ]
+    },
+
+    {
+        keyword: "processor",
+        difficulty: "hard",
+        guessed: false,
+        hints: [
+            "It is very important in today's world.",
+            "It is related to electronics.",
+            "It isn't too big.",
+            "It performs millions of calculations.",
+            "Looks like a chocolate bar but made of metal."
+        ]
     }
-]
+];

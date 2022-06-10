@@ -1,7 +1,6 @@
 const minutesOutput = document.querySelector('#minutes');
 const secondsOutput = document.querySelector('#seconds');
 const tensOutput = document.querySelector('#tens');
-const resetBtn = document.querySelector('#reset');
 
 let minutes = 0;
 let seconds = 0;
@@ -52,8 +51,6 @@ const resetTimer = () => {
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10);
 }
-
-resetBtn.addEventListener('click', resetTimer);
 
 
 

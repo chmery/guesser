@@ -141,32 +141,32 @@ p {
 .container__stopwatch {
   display: flex;
 }
-.container__minutes, .container__seconds, .container__tens, .container__attempts {
+.container__minutes, .container__seconds, .container__tens, .container__attempts, .container__guessed {
   font-weight: 700;
   color: var(--light-green);
 }
-.container__minutes, .container__seconds, .container__attempts {
+.container__minutes, .container__seconds, .container__attempts, .container__guessed {
   font-size: 1.625rem;
 }
 .container__tens {
   font-size: 1.125rem;
   margin-top: 0.4em;
 }
-.container__type {
+.container__difficulty {
   box-sizing: border-box;
   font-weight: 800;
   font-size: 1.125rem;
-  padding: 0.2em 0.6em;
+  padding: 0.2em 1em;
   color: #fff;
   border-radius: 10em;
 }
-.container__type--easy {
+.container__difficulty--easy {
   background-color: #E8E2CD;
 }
-.container__type--medium {
+.container__difficulty--medium {
   background-color: #D0C9C0;
 }
-.container__type--hard {
+.container__difficulty--hard {
   background-color: #B5A694;
 }
 .container__input {

@@ -19,3 +19,6 @@ const hintContainerDuration = {
     duration: 100,
     iterations: 1
 }
+
+const animateGuesserContainer = () => guesserContainer.animate(guesserContainerFrames, guesserContainerDuration);
+const animateHintCointainer = () => hintContainer.animate(hintContainerFrames, hintContainerDuration);

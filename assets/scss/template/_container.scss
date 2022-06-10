@@ -65,14 +65,16 @@
     &__minutes,
     &__seconds,
     &__tens,
-    &__attempts {
+    &__attempts,
+    &__guessed {
         font-weight: 700;
         color: var(--light-green);
     }
 
     &__minutes,
     &__seconds,
-    &__attempts {
+    &__attempts,
+    &__guessed {
         font-size: 1.625rem;
     }
 
@@ -81,11 +83,11 @@
         margin-top: 0.4em;
     }
 
-    &__type {
+    &__difficulty {
         box-sizing: border-box;
         font-weight: 800;
         font-size: 1.125rem;
-        padding: 0.2em 0.6em;
+        padding: 0.2em 1em;
         color: #fff;
         border-radius: 10em;
         

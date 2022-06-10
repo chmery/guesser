@@ -19,7 +19,7 @@
             <p class="container__text"><span class="container__text-highlight">2. </span>There are 3 types of words: easy, medium and hard. Each hint adds 6, 4 and 2 attempts depending on the word type respectively.</p>
             <p class="container__text"><span class="container__text-highlight">3. </span>You have an unlimited time and number of attempts.</p>
             <p class="container__text"><span class="container__text-highlight">4. </span>Capital letters are not required.</p>
-            <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess as fast as possible with as few tries as possible.</p>
+            <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess all the words as fast as possible with as few tries as possible.</p>
             <button class="container__btn" id="close-modal-info">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
@@ -27,15 +27,23 @@
     <dialog class="modal" id="modal-hints-limit">
         <div class="container container--no-shadow">
             <h1 class="container__name">HINTS LIMIT!</h1>
-            <p class="container__text container__text--btn-space">Now you have to guess the word.</p>
+            <p class="container__text container__text--btn-space">If you don't guess the word now, you'll have to start over.</p>
             <button class="container__btn" id="close-modal-hints-limit">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
+        </div>
+    </dialog>
+
+    <dialog class="modal" id="modal-guessed">
+        <div class="container container--no-shadow">
+            <h1 class="container__name">WORD GUESSED!</h1>
+            <p class="container__text container__text--btn-space">You still have <span class="container__text-highlight" id="modal-guessed-left"></span> word/s left to guess.</p>
+            <button class="container__btn" id="close-modal-guessed">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
 
     <dialog class="modal" id="modal-win">
         <div class="container container--no-shadow">
             <h1 class="container__name">YOU DID IT!</h1>
-            <p class="container__text container__text--btn-space">You have guessed the <span class="container__text-highlight" id="modal-win-type"></span> word in <span class="container__text-highlight" id="modal-win-attempts"></span> and it took you <span class="container__text-highlight" id="modal-win-time"></span></p>
+            <p class="container__text container__text--btn-space">You have successfully guessed all the words in <span class="container__text-highlight" id="modal-win-attempts"></span> and it took you <span class="container__text-highlight" id="modal-win-time"></span></p>
             <button class="container__btn" id="close-modal-win">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
         </div>
     </dialog>
@@ -59,13 +67,14 @@
         <div class="container__header">
             <img class="container__header-img" id="show-info" src="assets/images/info.svg">
             <h1 class="container__name container__name--margin-bottom-0">GUESSER</h1>
-            <img class="container__header-img" id="reset" src="assets/images/restart.svg">
+            <img class="container__header-img" id="draw-word" src="assets/images/restart.svg">
         </div>
         <div class="container__body">
             <div class="container__hint">
                 <h3 class="container__hint-number">Hint 1</h3>
                 <p class="container__text-hint"></p>
             </div>
+            <span class="container__difficulty" id="difficulty"></span>
             <div class="container__stats">
                 <div class="container__time">
                     <p class="container__text-highlight container__text-highlight--no-margin">Time:</p>
@@ -77,12 +86,13 @@
                         <span class="container__tens" id="tens">00</span>
                     </div>
                 </div>
-                <div class="container__type">
-                    <span class="container__type" id="type"></span>
+                <div class="container__guessed">
+                    <p class="container__text-highlight container__text-highlight--no-margin">Guessed:</p>
+                    <span class="container__stats-output" id="guessed"></span>
                 </div>
                 <div class="container__attempts">
                     <p class="container__text-highlight container__text-highlight--no-margin">Attempts:</p>
-                    <span class="container__attempts-span" id="attempts">1</span>
+                    <span class="container__stats-output" id="attempts"></span>
                 </div>
             </div>
             <input class="container__input container__input--btn-space" type="text">

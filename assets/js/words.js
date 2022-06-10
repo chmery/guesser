@@ -1,7 +1,7 @@
 const words = [
     {
         keyword: "apple",
-        type: "easy",
+        difficulty: "easy",
         hints: [
             "It is small and red.",
             "It grows on trees.",
@@ -13,7 +13,7 @@ const words = [
 
     {
         keyword: "dog",
-        type: "easy",
+        difficulty: "easy",
         hints: [
             "It likes when you throw something.",
             "It is a popular animal.",
@@ -25,7 +25,7 @@ const words = [
 
     {
         keyword: "chicken",
-        type: "easy",
+        difficulty: "easy",
         hints: [
             "It is closely related to food.",
             "It hatches from an egg.",
@@ -37,7 +37,7 @@ const words = [
 
     {
         keyword: "bike",
-        type: "medium",
+        difficulty: "medium",
         hints: [
             "It moves little faster than on foot.",
             "You can use and move it using your muscles.",
@@ -49,7 +49,7 @@ const words = [
 
     {
         keyword: "balloon",
-        type: "medium",
+        difficulty: "medium",
         hints: [
             "Children like it a lot.",
             "It's light.",
@@ -61,7 +61,7 @@ const words = [
 
     {
         keyword: "chair",
-        type: "medium",
+        difficulty: "medium",
         hints: [
             "Everyone has it at home.",
             "You can pick it up without a problem in most cases.",
@@ -73,7 +73,7 @@ const words = [
 
     {
         keyword: "frog",
-        type: "hard",
+        difficulty: "hard",
         hints: [
             "It is small.",
             "It is an animal.",

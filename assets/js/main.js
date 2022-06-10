@@ -1,3 +1,4 @@
+const hintContainer = document.querySelector('.container__hint');
 const hintNumber = document.querySelector('.container__hint-number');
 const hintOutput = document.querySelector('.container__text-hint');
 const hintBtn = document.querySelector('#get-hint');
@@ -6,70 +7,64 @@ const typeOutput = document.querySelector('#type');
 const attemptOutput = document.querySelector('#attempts');
 const input = document.querySelector('.container__input');
 const guessBtn = document.querySelector('#guess');
-const hintContainer = document.querySelector('.container__hint');
 
-// Win output variables
+// Win output variables.
 const winType = document.querySelector('#modal-win-type');
-const winTries = document.querySelector('#modal-win-tries');
+const winAttempts = document.querySelector('#modal-win-attempts');
 const winTime = document.querySelector('#modal-win-time');
 
-
 let randomItem = Math.floor(Math.random()*words.length);
-
 let attemptCount = 0;
 let hintArray = 0;
 let hintCount = hintArray + 1;
 
-hintOutput.innerHTML = words[randomItem].hints[hintArray];
-hintNumber.innerHTML = "Hint " + hintCount;
-attemptOutput.innerHTML = attemptCount;
+const setInitialState = () => {
+    attemptCount = 0;
+    hintArray = 0;
+    hintCount = hintArray + 1;
+    hintOutput.textContent = words[randomItem].hints[hintArray];
+    hintNumber.textContent = `Hint ${hintCount}`;
+    attemptOutput.textContent = attemptCount;
+    input.value = "";
+    hintContainer.animate(hintContainerFrames, hintContainerDuration);
+};
 
-const typeChecker = (randomItem) => {
-    if (words[randomItem].type == "easy"){
-        typeContainer.setAttribute('class', 'container__type container__type--easy')
-        typeOutput.innerHTML = "Easy";
-    } else if (words[randomItem].type == "medium"){
-        typeContainer.setAttribute('class', 'container__type container__type--medium')
-        typeOutput.innerHTML = "Medium";
-    } else {
-        typeContainer.setAttribute('class', 'container__type container__type--hard')
-        typeOutput.innerHTML = "Hard";
-    }
-}
+setInitialState();
 
-typeChecker(randomItem);
+const difficultyCheck = (randomItem) => {
+    const difficulty = words[randomItem].difficulty;
+    const difficultyOutputFormat = difficulty[0].toUpperCase() + difficulty.substring(1);
+
+    typeContainer.setAttribute('class', `container__type container__type--${difficulty}`);
+    typeOutput.textContent = difficultyOutputFormat;
+};
+
+difficultyCheck(randomItem);
 
 const reset = () => {
     randomItem = Math.floor(Math.random()*words.length);
-    typeChecker(randomItem)
-    resetTimer()
-    input.value = "";
-    attemptCount = 0;
-    hintArray = 0;
-    hintCount = 1;
-    hintContainer.animate(hintContainerFrames, hintContainerDuration)
-    hintOutput.innerHTML = words[randomItem].hints[hintArray];
-    hintNumber.innerHTML = "Hint " + hintCount;
-    attemptOutput.innerHTML = attemptCount;
-}
+    difficultyCheck(randomItem);
+    setInitialState();
+    resetTimer();
+};
 
 const getHint = () => {
     hintBtn.blur()
     if(hintArray < 4) {
-        hintArray++
-        hintCount++
-        hintOutput.innerHTML = words[randomItem].hints[hintArray];
-        hintNumber.innerHTML = "Hint " + hintCount;
-        hintContainer.animate(hintContainerFrames, hintContainerDuration)
-        if (words[randomItem].type == "easy"){
-            attemptCount += 6
-            attemptOutput.innerHTML = attemptCount
-        } else if (words[randomItem].type == "medium"){
-            attemptCount += 4
-            attemptOutput.innerHTML = attemptCount
+        hintArray++;
+        hintCount++;
+        hintOutput.textContent = words[randomItem].hints[hintArray];
+        hintNumber.textContent = `Hint ${hintCount}`;
+        hintContainer.animate(hintContainerFrames, hintContainerDuration);
+        if (words[randomItem].difficulty == "easy"){
+            attemptCount += 6;
+            attemptOutput.textContent = attemptCount;
+        } else if (words[randomItem].difficulty == "medium"){
+            attemptCount += 4;
+            attemptOutput.textContent = attemptCount;
         } else {
-            attemptCount += 2
-            attemptOutput.innerHTML = attemptCount
+            attemptCount += 2;
+            attemptOutput.textContent = attemptCount;
         }
     }
 
@@ -77,39 +72,42 @@ const getHint = () => {
         hintArray = 4;
         showHintsLimitModal();
     }
-}
+};
 
 const guess = () => {
     guessBtn.blur()
-    if(input.value.toLowerCase() == words[randomItem].keyword){
-        attemptCount++
-        winType.innerHTML = words[randomItem].type
-        winTries.innerHTML = attemptCount + " tries"
+    if((input.value).toLowerCase() == words[randomItem].keyword){
+        attemptCount++;
+        winType.textContent = words[randomItem].difficulty;
+        winAttempts.textContent = `${attemptCount} attempt/s`;
         if(minutes == 0) {
-            winTime.innerHTML = seconds + " seconds."
+            winTime.textContent = `${seconds} seconds.`;
         } else {
-            winTime.innerHTML = minutes + " minute/s and " + seconds + " seconds."
+            winTime.textContent = `${minutes} minute/s and ${seconds} seconds.`;
         }
-        showWinModal()
+        setTimeout(showWinModal, 10); 
     }
 
     if (input.value.toLowerCase() != words[randomItem].keyword){
-        attemptCount++
-        attemptOutput.innerHTML = attemptCount;
+        attemptCount++;
+        attemptOutput.textContent = attemptCount;
         guesserContainer.animate(guesserContainerFrames, guesserContainerDuration);
     }
 
     if (input.value.toLowerCase() != words[randomItem].keyword && hintArray == 4){
-        showLoseModal()
+        setTimeout(showLoseModal, 10);
     }
-}
+};
 
-hintBtn.addEventListener('click', getHint)
-resetBtn.addEventListener('click', reset)
-guessBtn.addEventListener('click', guess)
-window.addEventListener('keyup', function(e){
-    if (e.key === 'Enter'){
-        guess()
-    }
-})
+hintBtn.addEventListener('click', getHint);
+resetBtn.addEventListener('click', reset);
+guessBtn.addEventListener('click', guess);
+
+window.addEventListener('keydown', function(event){
+    if (event.key === 'Enter' && winModal.open) return;
+    if (event.key === 'Enter' && hintsLimitModal.open) return;
+    if (event.key === 'Enter' && loseModal.open) return;
+    if (event.key === 'Enter' && infoModal.open) return;
+    if (event.key === 'Enter') guess();
+});
 

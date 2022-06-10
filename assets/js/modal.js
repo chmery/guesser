@@ -34,7 +34,7 @@ closeInfoModal.addEventListener('click', () => {
 
 const showHintsLimitModal = () => {
     hintsLimitModal.showModal();
-    closeModal(closeHintsLimitModal, hintsLimitModal)
+    closeModal(closeHintsLimitModal, hintsLimitModal);
 }
 
 const showWinModal = () => {
@@ -44,7 +44,5 @@ const showWinModal = () => {
 
 const showLoseModal = () => {
     loseModal.showModal();
-    closeModalThenReset(closeLoseModal, loseModal)
+    closeModalThenReset(closeLoseModal, loseModal);
 }
- 
-

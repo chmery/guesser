@@ -50,7 +50,7 @@ const resetTimer = () => {
     tensOutput.innerHTML = "00";
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10);
-}
+};
 
 
 

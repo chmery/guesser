@@ -19,11 +19,11 @@ main {
 }
 
 :root {
-  --light-green: #6D8B74;
-  --dark-green: #5F7161;
-  --border-color: #D3D3D3;
+  --light-green: #6d8b74;
+  --dark-green: #5f7161;
+  --border-color: #d3d3d3;
   --dark-grey: #282828;
-  --box-shadow: 0px 0px 20px -2px #DFDFDF;
+  --box-shadow: 0px 0px 20px -2px #dfdfdf;
 }
 
 * {
@@ -170,13 +170,13 @@ input {
   border-radius: 10em;
 }
 .container__difficulty--easy {
-  background-color: #E8E2CD;
+  background-color: #e8e2cd;
 }
 .container__difficulty--medium {
-  background-color: #D0C9C0;
+  background-color: #d0c9c0;
 }
 .container__difficulty--hard {
-  background-color: #B5A694;
+  background-color: #b5a694;
 }
 .container__input {
   width: 100%;

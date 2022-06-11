@@ -1,113 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Guesser</title>
-</head>
-<body>
-<main>
-    <dialog class="modal" id="modal-info">
-        <div class="container container--no-shadow">
-            <h1 class="container__name">INFO</h1>
-            <p class="container__text"><span class="container__text-highlight">1. </span>If you take 5 hints and fail to guess, the game is over.</p>
-            <p class="container__text"><span class="container__text-highlight">2. </span>There are 3 types of words: easy, medium and hard. Each hint adds 6, 4 and 2 attempts depending on the word type respectively.</p>
-            <p class="container__text"><span class="container__text-highlight">3. </span>You have an unlimited time and number of attempts.</p>
-            <p class="container__text"><span class="container__text-highlight">4. </span>Capital letters are not required.</p>
-            <p class="container__text container__text--btn-space"><span class="container__text-highlight">5. </span>Try to guess all the words as fast as possible with as few tries as possible.</p>
-            <button class="container__btn" id="close-modal-info">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
-        </div>
-    </dialog>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <title>Guesser</title>
+    </head>
+    <body>
+        <main>
+            <dialog class="modal" id="modal-info">
+                <div class="container container--no-shadow">
+                    <h1 class="container__name">INFO</h1>
+                    <p class="container__text">
+                        <span class="container__text-highlight">1. </span>If you take 5 hints and fail to guess, the
+                        game is over.
+                    </p>
+                    <p class="container__text">
+                        <span class="container__text-highlight">2. </span>There are 3 types of words: easy, medium and
+                        hard. Each hint adds 6, 4 and 2 attempts depending on the word type respectively.
+                    </p>
+                    <p class="container__text">
+                        <span class="container__text-highlight">3. </span>You have an unlimited time and number of
+                        attempts.
+                    </p>
+                    <p class="container__text">
+                        <span class="container__text-highlight">4. </span>Capital letters are not required.
+                    </p>
+                    <p class="container__text container__text--btn-space">
+                        <span class="container__text-highlight">5. </span>Try to guess all the words as fast as possible
+                        with as few tries as possible.
+                    </p>
+                    <button class="container__btn" id="close-modal-info">
+                        Ok<img class="container__btn-icon" src="assets/images/check.svg" />
+                    </button>
+                </div>
+            </dialog>
 
-    <dialog class="modal" id="modal-hints-limit">
-        <div class="container container--no-shadow">
-            <h1 class="container__name">HINTS LIMIT!</h1>
-            <p class="container__text container__text--btn-space">If you don't guess the word now, you'll have to start over.</p>
-            <button class="container__btn" id="close-modal-hints-limit">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
-        </div>
-    </dialog>
+            <dialog class="modal" id="modal-hints-limit">
+                <div class="container container--no-shadow">
+                    <h1 class="container__name">HINTS LIMIT!</h1>
+                    <p class="container__text container__text--btn-space">
+                        If you don't guess the word now, you'll have to start over.
+                    </p>
+                    <button class="container__btn" id="close-modal-hints-limit">
+                        Ok<img class="container__btn-icon" src="assets/images/check.svg" />
+                    </button>
+                </div>
+            </dialog>
 
-    <dialog class="modal" id="modal-guessed">
-        <div class="container container--no-shadow">
-            <h1 class="container__name">WORD GUESSED!</h1>
-            <p class="container__text container__text--btn-space">You still have <span class="container__text-highlight" id="modal-guessed-left"></span> word/s left to guess.</p>
-            <button class="container__btn" id="close-modal-guessed">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
-        </div>
-    </dialog>
+            <dialog class="modal" id="modal-guessed">
+                <div class="container container--no-shadow">
+                    <h1 class="container__name">WORD GUESSED!</h1>
+                    <p class="container__text container__text--btn-space">
+                        You still have <span class="container__text-highlight" id="modal-guessed-left"></span> word/s
+                        left to guess.
+                    </p>
+                    <button class="container__btn" id="close-modal-guessed">
+                        Ok<img class="container__btn-icon" src="assets/images/check.svg" />
+                    </button>
+                </div>
+            </dialog>
 
-    <dialog class="modal" id="modal-win">
-        <div class="container container--no-shadow">
-            <h1 class="container__name">YOU DID IT!</h1>
-            <p class="container__text container__text--btn-space">You have successfully guessed all the words in <span class="container__text-highlight" id="modal-win-attempts"></span> and it took you <span class="container__text-highlight" id="modal-win-time"></span></p>
-            <button class="container__btn" id="close-modal-win">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
-        </div>
-    </dialog>
+            <dialog class="modal" id="modal-win">
+                <div class="container container--no-shadow">
+                    <h1 class="container__name">YOU DID IT!</h1>
+                    <p class="container__text container__text--btn-space">
+                        You have successfully guessed all the words in
+                        <span class="container__text-highlight" id="modal-win-attempts"></span> and it took you
+                        <span class="container__text-highlight" id="modal-win-time"></span>
+                    </p>
+                    <button class="container__btn" id="close-modal-win">
+                        Ok<img class="container__btn-icon" src="assets/images/check.svg" />
+                    </button>
+                </div>
+            </dialog>
 
-    <dialog class="modal" id="modal-lose">
-        <div class="container container--no-shadow">
-            <h1 class="container__name">NOT THIS TIME...</h1>
-            <p class="container__text container__text--btn-space">Unfortunately, you have exceeded the <span class="container__text-highlight">hints limit</span> and you didin't guess the word.</p>
-            <button class="container__btn" id="close-modal-lose">Ok<img class="container__btn-icon" src="assets/images/check.svg"></button>
-        </div>
-    </dialog>
+            <dialog class="modal" id="modal-lose">
+                <div class="container container--no-shadow">
+                    <h1 class="container__name">NOT THIS TIME...</h1>
+                    <p class="container__text container__text--btn-space">
+                        Unfortunately, you have exceeded the
+                        <span class="container__text-highlight">hints limit</span> and you didin't guess the word.
+                    </p>
+                    <button class="container__btn" id="close-modal-lose">
+                        Ok<img class="container__btn-icon" src="assets/images/check.svg" />
+                    </button>
+                </div>
+            </dialog>
 
-    <div class="container" id="start-container">
-        <h1 class="container__name">GUESSER</h1>
-        <p class="container__text">Try to guess the word using the hints.</p>
-        <p class="container__text container__text--btn-space">I recommend reading detailed <span class="container__text-highlight container__text-highlight--link" id="show-info">info</span> before you start.</p>
-        <button class="container__btn" id="start-guessing">Start guessing<img class="container__btn-icon" src="assets/images/start.svg"></button>
-    </div>
-
-    <div class="container container--inactive" id="guesser-container">
-        <div class="container__header">
-            <img class="container__header-img" id="show-info" src="assets/images/info.svg">
-            <h1 class="container__name container__name--margin-bottom-0">GUESSER</h1>
-            <img class="container__header-img" id="draw-word" src="assets/images/restart.svg">
-        </div>
-        <div class="container__body">
-            <div class="container__hint">
-                <h3 class="container__hint-number">Hint 1</h3>
-                <p class="container__text-hint"></p>
+            <div class="container" id="start-container">
+                <h1 class="container__name">GUESSER</h1>
+                <p class="container__text">Try to guess the word using the hints.</p>
+                <p class="container__text container__text--btn-space">
+                    I recommend reading detailed
+                    <span class="container__text-highlight container__text-highlight--link" id="show-info">info</span>
+                    before you start.
+                </p>
+                <button class="container__btn" id="start-guessing">
+                    Start guessing<img class="container__btn-icon" src="assets/images/start.svg" />
+                </button>
             </div>
-            <span class="container__difficulty" id="difficulty"></span>
-            <div class="container__stats">
-                <div class="container__time">
-                    <p class="container__text-highlight container__text-highlight--no-margin">Time:</p>
-                    <div class="container__stopwatch">
-                        <span class="container__minutes" id="minutes">00</span>
-                        <span class="container__minutes">:</span>
-                        <span class="container__seconds" id="seconds">00</span>
-                        <span class="container__tens">:</span>
-                        <span class="container__tens" id="tens">00</span>
+
+            <div class="container container--inactive" id="guesser-container">
+                <div class="container__header">
+                    <img class="container__header-img" id="show-info" src="assets/images/info.svg" />
+                    <h1 class="container__name container__name--margin-bottom-0">GUESSER</h1>
+                    <img class="container__header-img" id="draw-word" src="assets/images/restart.svg" />
+                </div>
+                <div class="container__body">
+                    <div class="container__hint">
+                        <h3 class="container__hint-number">Hint 1</h3>
+                        <p class="container__text-hint"></p>
+                    </div>
+                    <span class="container__difficulty" id="difficulty"></span>
+                    <div class="container__stats">
+                        <div class="container__time">
+                            <p class="container__text-highlight container__text-highlight--no-margin">Time:</p>
+                            <div class="container__stopwatch">
+                                <span class="container__minutes" id="minutes">00</span>
+                                <span class="container__minutes">:</span>
+                                <span class="container__seconds" id="seconds">00</span>
+                                <span class="container__tens">:</span>
+                                <span class="container__tens" id="tens">00</span>
+                            </div>
+                        </div>
+                        <div class="container__guessed">
+                            <p class="container__text-highlight container__text-highlight--no-margin">Guessed:</p>
+                            <span class="container__stats-output" id="guessed"></span>
+                        </div>
+                        <div class="container__attempts">
+                            <p class="container__text-highlight container__text-highlight--no-margin">Attempts:</p>
+                            <span class="container__stats-output" id="attempts"></span>
+                        </div>
+                    </div>
+                    <input class="container__input container__input--btn-space" type="text" />
+                    <div class="container__buttons">
+                        <button class="container__btn container__btn--down" id="get-hint">
+                            Get a hint<img
+                                class="container__btn-icon container__btn-icon--no-margin"
+                                src="assets/images/hint.svg"
+                            />
+                        </button>
+                        <button class="container__btn container__btn--right container__btn--down" id="guess">
+                            Guess<img class="container__btn-icon" src="assets/images/check.svg" />
+                        </button>
                     </div>
                 </div>
-                <div class="container__guessed">
-                    <p class="container__text-highlight container__text-highlight--no-margin">Guessed:</p>
-                    <span class="container__stats-output" id="guessed"></span>
-                </div>
-                <div class="container__attempts">
-                    <p class="container__text-highlight container__text-highlight--no-margin">Attempts:</p>
-                    <span class="container__stats-output" id="attempts"></span>
-                </div>
             </div>
-            <input class="container__input container__input--btn-space" type="text">
-            <div class="container__buttons">
-                <button class="container__btn container__btn--down" id="get-hint">Get a hint<img class="container__btn-icon container__btn-icon--no-margin" src="assets/images/hint.svg"></button>
-                <button class="container__btn container__btn--right container__btn--down" id="guess">Guess<img class="container__btn-icon" src="assets/images/check.svg"></button>
-            </div>
-        </div>
-    </div>
-    <script src="assets/js/modal.js"></script>
-    <script src="assets/js/timer.js"></script>
-    <script src="assets/js/start.js"></script>
-    <script src="assets/js/words.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/main.js"></script>
-</main>
-</body>
+            <script src="assets/js/modal.js"></script>
+            <script src="assets/js/timer.js"></script>
+            <script src="assets/js/start.js"></script>
+            <script src="assets/js/words.js"></script>
+            <script src="assets/js/animation.js"></script>
+            <script src="assets/js/main.js"></script>
+        </main>
+    </body>
 </html>
